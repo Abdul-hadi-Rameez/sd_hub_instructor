@@ -1,1 +1,70 @@
-<p>registration works!</p>
+<div class="register-main">
+    <div class="head-login">
+        <div class="img">
+           <img src="logo.png" alt="sdhub">
+        </div>
+        <div class="login-heading">
+            <p class="head-p">Student Registration</p>
+           <p>Skill Development Hub</p>
+        </div>
+    </div>
+    <div class="module">
+        <div class="personal">
+            <p class="num-1">1</p>
+            <p>Personal</p>
+        </div>
+        <div class="education">
+            <p class="num-2">2</p>
+            <p>education</p>
+        </div>
+        <div class="declaration">
+            <p class="num-2">3</p>
+            <p>declaration</p>
+        </div>
+    </div>
+    <div class="module-h1">
+        <h1>Applicant Information</h1>
+    </div>
+    <div class="form-section">
+        <form action="register" method="post">
+
+                <label for="application date">Application Date</label><br>
+                <input type="date" name="date" id="date" placeholder="date" required>
+
+                <label for="std-nm">Full Name</label><br>
+            <div class="nm-input">
+
+                <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+                <input type="text" name="middle-name" id="middle-name" placeholder="middle-name" required>
+                <input type="text" name="last-name" id="last-name" placeholder="last-name" required>
+
+            </div>
+            <label for="father-nm">Father Name</label><br>
+            <div class="nm-input">
+
+                <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+                <input type="text" name="middle-name" id="middle-name" placeholder="middle-name" required>
+                <input type="text" name="last-name" id="last-name" placeholder="last-name" required>
+
+            </div>
+            
+            <div class="personal-details">
+
+                <div class="personal-sub">
+                    <label for="dob">Date Of Birth</label><br>
+                    <input type="date" name="d-o-b" id="d-o-b" placeholder="date" required>
+                </div>
+                <div class="personal-sub">
+                    <label for="phone-no">Enter Your Phone Number</label><br>
+                    <input type="text" name="phone-no" id="phone-no" placeholder="Enter Your number" required>
+                </div>
+                <div class="personal-sub">
+                    <label for="email">Enter Your E-mail</label><br>
+                    <input type="email" name="email" id="email" placeholder="Enter Your E-mail" required>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

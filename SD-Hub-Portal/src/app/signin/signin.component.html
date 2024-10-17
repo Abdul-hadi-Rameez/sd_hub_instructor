@@ -1,16 +1,29 @@
-<mat-card>
-    <h2>Sign In</h2>
-    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email" type="email" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput formControlName="password" type="password" required>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit">Sign In</button>
-    </form>
-</mat-card>
+<div class="main">
+    <div class="head-login">
+        <div class="img">
+           <img src="logo.png" alt="sdhub">
+        </div>
+        <div class="login-heading">
+            <p class="head-p">Student Login</p>
+           <p>Skill Development Hub</p>
+        </div>
+    </div>
+    <div class="sub-container">
+        <form action="signin">
+            <label for="name">Username</label><br>
+            <input type="text" name="name" id="name" placeholder="Enter Your User Name" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password" placeholder="Enter Your User password" required>
+            <div class="forget">
+                <a href="#">Forget Password</a>
+            </div>
+            <div class="login-btn">
+                <a href="#">Login</a>
+            </div>
+            <div class="register-now">
+                <p>Don't have an account?<a href="register">Register Now</a></p>
+            </div>
+            
+        </form>
+    </div>
+</div>
