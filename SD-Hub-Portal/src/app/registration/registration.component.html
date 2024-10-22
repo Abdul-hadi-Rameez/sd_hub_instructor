@@ -1,5 +1,6 @@
 <div class="register-main">
     <div class="head-login">
+      <link rel="stylesheet" href="registration.component.css">
         <div class="img">
            <img src="logo.png" alt="sdhub">
         </div>
@@ -8,63 +9,44 @@
            <p>Skill Development Hub</p>
         </div>
     </div>
-    <div class="module">
-        <div class="personal">
-            <p class="num-1">1</p>
-            <p>Personal</p>
-        </div>
-        <div class="education">
-            <p class="num-2">2</p>
-            <p>education</p>
-        </div>
-        <div class="declaration">
-            <p class="num-2">3</p>
-            <p>declaration</p>
-        </div>
-    </div>
-    <div class="module-h1">
-        <h1>Applicant Information</h1>
-    </div>
-    <div class="form-section">
-        <form action="register" method="post">
-
-                <label for="application date">Application Date</label><br>
-                <input type="date" name="date" id="date" placeholder="date" required>
-
-                <label for="std-nm">Full Name</label><br>
-            <div class="nm-input">
-
-                <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
-                <input type="text" name="middle-name" id="middle-name" placeholder="middle-name" required>
-                <input type="text" name="last-name" id="last-name" placeholder="last-name" required>
-
+    <mat-stepper [linear]="islinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Peronal details</ng-template>
+            <mat-form-field>
+              <mat-label>student id</mat-label>
+              <input type="text" matInput placeholder="std id" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>application date</mat-label>
+              <input type="date" matInput placeholder="appl date" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
             </div>
-            <label for="father-nm">Father Name</label><br>
-            <div class="nm-input">
-
-                <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
-                <input type="text" name="middle-name" id="middle-name" placeholder="middle-name" required>
-                <input type="text" name="last-name" id="last-name" placeholder="last-name" required>
-
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+          <form [formGroup]="secondFormGroup">
+            <mat-form-field>
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
             </div>
-            
-            <div class="personal-details">
-
-                <div class="personal-sub">
-                    <label for="dob">Date Of Birth</label><br>
-                    <input type="date" name="d-o-b" id="d-o-b" placeholder="date" required>
-                </div>
-                <div class="personal-sub">
-                    <label for="phone-no">Enter Your Phone Number</label><br>
-                    <input type="text" name="phone-no" id="phone-no" placeholder="Enter Your number" required>
-                </div>
-                <div class="personal-sub">
-                    <label for="email">Enter Your E-mail</label><br>
-                    <input type="email" name="email" id="email" placeholder="Enter Your E-mail" required>
-                </div>
-
-            </div>
-
-        </form>
-    </div>
-</div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+   
+   
