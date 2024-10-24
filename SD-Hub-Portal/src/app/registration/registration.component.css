@@ -34,3 +34,21 @@ mat-form-field{
     padding: 7px;
     width: 48%;
 }
+.details{
+    display: flex;
+    width: 99%;
+}
+.appl{
+    display: flex;
+}
+.frname{
+    display: flex;
+    width: 99%;
+}
+.pdetails{
+    display: flex;
+    width: 99%;
+}
+.add{
+    width: 203%;
+}

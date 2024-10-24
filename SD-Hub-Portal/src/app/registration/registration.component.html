@@ -13,40 +13,167 @@
         <mat-step [stepControl]="firstFormGroup">
           <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Peronal details</ng-template>
+            <h3>Application information</h3>
             <mat-form-field>
-              <mat-label>student id</mat-label>
-              <input type="text" matInput placeholder="std id" formControlName="firstCtrl" required>
+              <mat-label>Student ID</mat-label>
+              <input type="text" matInput placeholder="student id" formControlName="studentID" required>
             </mat-form-field>
             <mat-form-field>
-              <mat-label>application date</mat-label>
-              <input type="date" matInput placeholder="appl date" formControlName="firstCtrl" required>
+              <mat-label>Application date</mat-label>
+              <input type="date" matInput placeholder="date" formControlName="appDate" required>
             </mat-form-field>
+
+            <div class="details">
+              <mat-form-field>
+                <mat-label>Student Name</mat-label>
+                <input type="text" matInput placeholder="First Name" formControlName="firstName" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput placeholder="Middle Name" formControlName="middleName" required>
+              </mat-form-field>
+              <mat-form-field>  
+                <input type="text" matInput placeholder="Last Name" formControlName="lastName" required>
+              </mat-form-field>  
+            </div>
+
+            <div class="frname">
+              <mat-form-field>
+                <mat-label>Fathers Name</mat-label>
+                <input type="text" matInput placeholder="First Name" formControlName="f_firstname" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput placeholder="Middle Name" formControlName="f_middlename" required>
+              </mat-form-field>
+              <mat-form-field>               
+                <input type="text" matInput placeholder="Last Name" formControlName="f_lastname" required>
+              </mat-form-field>           
+            </div>
+
+            <div class="pdetails">
+              <mat-form-field>
+                <mat-label>Date of Birth</mat-label>
+                <input type="date" matInput placeholder="DOB" formControlName="dob" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Phone No</mat-label>
+                <input type="number" matInput placeholder="Enter your Number" formControlName="phno" required>
+              </mat-form-field>
+              <mat-form-field>  
+                <mat-label>Email ID</mat-label>
+                <input type="email" matInput placeholder="Enter yur emali" formControlName="email" required>
+              </mat-form-field>  
+            </div>
+
+            <div class="add">
+            <mat-form-field>
+              <mat-label>Address</mat-label>
+              <textarea name="address" id="add"  matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY"
+              required ></textarea>              
+            </mat-form-field>
+          </div>
+
+          <div class="contact">
+            <mat-form-field>
+            <mat-label>Parent/Guardian contact Details</mat-label>
+              <input matInput type="text" placeholder="Enter your Address" formControlName="p_contact" required>
+            </mat-form-field>
+            <mat-form-field>
+            <mat-label>Total Household Income</mat-label>
+              <input matInput type="text" placeholder="Enter your Address" formControlName="income" required>
+            </mat-form-field>
+          </div>
+
             <div>
               <button mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
-        <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <mat-step [stepControl]="secondFormGroup" label="Education details">
           <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Education Details</ng-template>
+
+            <h3>Course Details</h3>
+
             <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                     required>
+              <div class="education">
+                <mat-label>Course Applying For</mat-label>
+                <input matInput formControlName="secCtrl" placeholder="" required>
+               </div>
+              </mat-form-field>
+            
+            <!-- Qualification details of Student -->
+
+            <h4>Qualifications Details</h4>
+            <div class="qualification">
+            <mat-form-field>
+              <mat-label>Degree</mat-label>
+              <input matInput formControlName="Degree" placeholder="Enter your Degree Details" required>
             </mat-form-field>
+            <mat-form-field>
+              <mat-label>College Name</mat-label>
+              <input matInput formControlName="Collegename" placeholder="Enter your College Name" required>
+            </mat-form-field><br><br>
+            <mat-form-field>
+              <mat-label>Year of Passing</mat-label>
+              <input input type="date" matInput  formControlName="Year" placeholder="Enter your Year of Passing" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Percentage</mat-label>
+              <input matInput formControlName="Percentage" placeholder="Enter your Percentage" required>
+            </mat-form-field></div>
+           
             <div>
               <button mat-button matStepperPrevious>Back</button>
               <button mat-button matStepperNext>Next</button>
             </div>
-          </form>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>You are now done.</p>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+
+            <mat-step [stepControl]="thirdformGroup">
+              <form [formGroup]="thirdformGroup">
+              <ng-template matStepLabel>Declaration</ng-template>
+    
+              <h4>Declaration and Submission</h4>
+              <p>I Declare that all the information given is true and complete to the best of my Knowledge.I Understand that false or misleading Information may result in my rejection of the application </p>
+              <div class="sign2">
+              <mat-form-field>
+                <mat-label>student signature</mat-label>
+                <input matInput formControlName="studentsign" placeholder="Enter your sign" required>
+              </mat-form-field>
+    
+              <mat-form-field>
+                <mat-label>Parent/Guardian signature</mat-label>
+                <input matInput formControlName="Parentsign" placeholder="Enter sign" required>
+              </mat-form-field><br><br></div>
+    
+              <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input input type="date" matInput formControlName="Date-app" placeholder="Enter your Date" required>
+              </mat-form-field>
+    
+               <div class="enclosure"> 
+    
+              <P>ENCLOSURES<P> </div>
+              <li>Passport size photo</li>
+              <li>Copy of Aadhar card</li>
+              <li>Copy of photo ID proof</li>
+              <li>Original certificate</li>
+              <li>Income certificate</li><br><br>
+    
+              <div class="Student-enclousure">
+                <ul>
+                  <li>Upload photo <br><input type="file"></li>
+                  <li>Upload Aadhar<br><input type="file"></li>
+                  <li>Upload Markssheet<br><input type="file"></li>
+                  <li>Upload College ID card<br><input type="file"></li>
+                  <li>Income Certificate<br><input type="file"></li></ul></div>
+    
+               
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+    
+              </form>
+              </mat-step>
+         </mat-stepper>
    
    
