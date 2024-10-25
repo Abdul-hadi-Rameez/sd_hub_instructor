@@ -1,5 +1,5 @@
 .register-main{
-    height: 90%;
+    height: 78%;
     width: 50%;
     border: 1px solid #DC143C;
     margin: auto;
@@ -51,4 +51,10 @@ mat-form-field{
 }
 .add{
     width: 203%;
+}
+.dateapp{
+    width: 203%;
+}
+h4{
+    color: #DC143C;
 }

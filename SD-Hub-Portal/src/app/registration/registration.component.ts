@@ -10,6 +10,8 @@ export class RegistrationComponent implements OnInit {
   islinear = false;
   firstFormGroup!:FormGroup;
   secondFormGroup!:FormGroup;
+  thirdFormGroup!:FormGroup;
+  fourthFormGroup!:FormGroup;
 
   constructor(
     private _formBuilder:FormBuilder
@@ -39,6 +41,22 @@ ngOnInit():void{
     Year: ['', Validators.required],
     Percentage: ['', Validators.required],
   });
+  this.thirdFormGroup = this._formBuilder.group({
+    studentsign: ['', Validators.required],
+    Parentsign: ['', Validators.required],
+    Dateapp: ['', Validators.required]
+  });
+}
+onsubmit():void{
+  const formdata={
+    ...this.firstFormGroup.value,
+    ...this.secondFormGroup.value,
+    ...this.thirdFormGroup.value
+  };
+console.log(formdata)
+
+  this.fourthFormGroup = this._formBuilder.group({
+  })
 }  
 }
 
