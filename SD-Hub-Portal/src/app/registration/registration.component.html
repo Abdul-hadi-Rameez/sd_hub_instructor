@@ -136,7 +136,7 @@
       <h4 style="text-decoration: underline;">Declaration and Submission</h4>
       <p>I Declare that all the information given is true and complete to the best of my Knowledge.I Understand that false or misleading Information may result in my rejection of the application </p>
       <div class="sign2">
-        <mat-form-field>
+        <!-- <mat-form-field>
           <mat-label>student signature</mat-label>
           <input matInput formControlName="studentsign" placeholder="Enter your sign" required>
         </mat-form-field>
@@ -144,14 +144,17 @@
         <mat-form-field>
           <mat-label>Parent/Guardian signature</mat-label>
           <input matInput formControlName="Parentsign" placeholder="Enter sign" required>
-        </mat-form-field><br><br>
+        </mat-form-field><br><br> -->
+        <h5 style="color:  #DC143C;">upload student signature*</h5>
+        <input type="file" id="file-upload" required><br><br>
+
+        <h5 style="color:  #DC143C;">upload guardian signature*</h5>
+        <input type="file" id="file-upload" required><br><br>
+
       </div>
        <div class="dateapp">
-      <mat-form-field>
-        <mat-label>Date</mat-label>
-        <input input type="date" matInput formControlName="Dateapp" placeholder="Enter your Date" required>
-      </mat-form-field>
-       </div>
+     <input style="width: 20%; height: 25px;" type="date" name="appl date" id="date" required>
+       </div><br><br>
 
       <div class="enclosure"> 
         <P>ENCLOSURES<P> 
@@ -174,32 +177,32 @@
 
             <div>
               <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Save</button>
+              <button mat-button matStepperNext style="font-size: larger;" colour="primary" (click)="onsubmit()">Save Application</button>
             </div>
           </form>
     </mat-step>
 
    
-    <mat-step [stepControl]="fourthFormGroup">
+    <!-- <mat-step [stepControl]="fourthFormGroup">
       <form [formGroup]="fourthFormGroup">
       <ng-template matStepLabel>PREVIEW/DONE</ng-template>
       <mat-form-field>
         <mat-label>PREVIEW</mat-label>
       <table>
-        <input type="text" matInput formControlName="table" name="studentID" id="" value="StudentID">
-        <input type="text" matInput formControlName="table" name="studentnm" id="" value="Student Name">
-        <input type="text" matInput formControlName="table" name="fathernm" id="" value="Fathers Name">
-        <input type="date" matInput formControlName="table" name="dob" id="" value="Date of Birth">
-        <input type="email" matInput formControlName="table" name="email" id="" value="Email">
-        <input type="text" matInput formControlName="table" name="education" id="" value="Qualification">
-        <input type="text" matInput formControlName="table" name="Course" id="" value="Selected Course">
+        <input type="text" name="studentID" id="" value="StudentID">
+        <input type="text" name="studentnm" id="" value="Student Name">
+        <input type="text" name="fathernm" id="" value="Fathers Name">
+        <input type="date" name="dob" id="" value="Date of Birth">
+        <input type="email" name="email" id="" value="Email">
+        <input type="text" name="education" id="" value="Qualification">
+        <input type="text" name="Course" id="" value="Selected Course">
       </table>
-      </mat-form-field>
+      </mat-form-field> -->
       
         <button mat-button matStepperNext colour="primary" (click)="onsubmit()">submit</button>
       
-     </form>
-    </mat-step>
+     <!-- </form>
+    </mat-step> -->
   </mat-stepper>
 </div>
    

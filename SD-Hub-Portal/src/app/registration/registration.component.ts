@@ -11,7 +11,7 @@ export class RegistrationComponent implements OnInit {
   firstFormGroup!:FormGroup;
   secondFormGroup!:FormGroup;
   thirdFormGroup!:FormGroup;
-  fourthFormGroup!:FormGroup;
+  // fourthFormGroup!:FormGroup;
 
   constructor(
     private _formBuilder:FormBuilder
@@ -55,8 +55,8 @@ onsubmit():void{
   };
 console.log(formdata)
 
-  this.fourthFormGroup = this._formBuilder.group({
-  })
+  // this.fourthFormGroup = this._formBuilder.group({
+  // })
 }  
 }
 
